@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>amount transfer</title>
+    <style>
+           #container {
+  height: 250px;
+  width: 200px;
+  margin: 100px auto;
+  background: #f7f7f7;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  padding-top: 50px;
+  font-family:'Times New Roman', Times, serif
+}
+body{
+    background-color: blueviolet;
+}
+    </style>
+</head>
+<center>
+<body>
+    <script>
+        function amount_1(){
+            var c=document.getElementById("current_amount").value 
+            var t=document.getElementById("amount_transfer").value
+            var ba=document.getElementById("bank").value 
+            var b=c-t
+            if(t==""){
+                alert("please enter the amount to transfer")
+            }
+            else if(b<0){
+                alert("failed to transfer.......  exceeding minimum blance")
+            }
+            else if(ba==""){
+                alert("select the bank")
+            }
+            else
+            {
+               document.getElementById("current_amount").value=b
+               document.getElementById("here").innerHTML="RS"+" "+t+" "+"has been debited"
+            }
+        }
+    </script>
+    <h1>Welcome to the amount transfer page</h1>
+    <div id="container">
+    <label > Current Amount</label>
+    <input type="text" id="current_amount" value="60000" disabled><br><br>
+    <label > Transfer Amount</label>
+    <input type="text" id="amount_transfer"><br><br>
+    <label >Bank</label><br>
+    <select id="bank">
+        <option value=""></option>
+        <option value="1">canara bank</option>
+        <option value="2">axis bank</option>
+        <option value="3">indian bank</option>
+    </select><br><br>
+    <input type="button" value="submit" onclick="amount_1()">
+    <p id="here"></p>
+    </div>
+    
+</body>
+</center>
+</html>
